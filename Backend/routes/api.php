@@ -7,6 +7,11 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TaskEntryController;
 use App\Http\Controllers\UserController; // <--- Import this
 
+// Public route to keep the server awake
+Route::get('/ping', function () {
+    return response()->json(['message' => 'pong', 'status' => 'awake']);
+});
+
 // Public Routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
