@@ -1,9 +1,8 @@
-// src/lib/axios.js
 import axios from "axios";
 
 const api = axios.create({
-  // This must match your Laravel URL
-  baseURL: "http://127.0.0.1:8000/api",
+  // Use the Environment variable if it exists, otherwise fallback to localhost
+  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api",
   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json",
