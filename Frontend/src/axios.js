@@ -2,8 +2,9 @@ import axios from "axios";
 
 const api = axios.create({
   // Use the Environment variable if it exists, otherwise fallback to localhost
-  baseURL: import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api",
-  headers: {
+  //baseURL: "https://support-team-tracker.onrender.com/api" || "http://127.0.0.1:8000/api",
+ baseURL: "https://support-team-tracker.onrender.com/api",
+   headers: {
     "Content-Type": "application/json",
     "Accept": "application/json",
   },
