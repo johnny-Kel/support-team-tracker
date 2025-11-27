@@ -24,9 +24,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/migrate', function() {
-    \Artisan::call('migrate --force');
-    return 'Migrated!';
+Route::get('/run-migrate', function () {
+    Artisan::call('migrate --force');
+    return 'Migrations complete';
 });
+
 
 require __DIR__.'/auth.php';
