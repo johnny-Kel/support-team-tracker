@@ -3,14 +3,12 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
+    return response()->json([
+        'message' => 'Support Team Tracker API is running!',
+        'status' => 'Connected'
     ]);
 });
 
@@ -24,10 +22,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/run-migrate', function () {
-    Artisan::call('migrate --force');
-    return 'Migrations complete';
-});
 
 
 require __DIR__.'/auth.php';
