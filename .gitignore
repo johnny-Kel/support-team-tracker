@@ -1,0 +1,16 @@
+# Ignore dependency folders
+node_modules/
+vendor/
+
+# Ignore Environment Variables (Secrets)
+.env
+.env.backup
+.env.production
+
+# Ignore Build files
+frontend/dist/
+public/build/
+
+# Ignore Mac/Windows system files
+.DS_Store
+Thumbs.db
