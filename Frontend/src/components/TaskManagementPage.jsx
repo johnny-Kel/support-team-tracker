@@ -91,6 +91,7 @@ export default function TaskManagementPage() {
       await api.delete(`/tasks/${id}`)
       fetchData()
     } catch (error) {
+      console.error(error)
       alert("Failed to delete.")
     }
   }
